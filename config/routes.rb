@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
+   devise_for :users, controllers: {
+        sessions: 'users/sessions', confirmations: 'users/confirmations', registrations: 'users/registrations', passwords: 'users/passwords',unlocks: 'users/unlocks'
+      }
   get 'home/index'
   root to: "home#index"
 
