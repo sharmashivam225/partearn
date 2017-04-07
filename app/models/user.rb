@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates :first_name,:last_name,:contact_no,:address,:age,:sex,:nationality,:country,:city,:zip, presence: true
   validates :age, numericality: true
 
+  mount_uploader :profile_pic, AttachmentUploader
+
   attr_accessor :login
 
 

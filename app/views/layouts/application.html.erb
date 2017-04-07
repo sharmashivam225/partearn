@@ -96,9 +96,9 @@
             <li><a href="#">Link</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu account-setting">
                 <% if user_signed_in? %>
-                  <li><%= current_user.full_name %></li>
+                  <li><span class="user-name"><%= current_user.full_name %></span> <%= image_tag current_user.try(:profile_pic), class: "img-responsive user-profile-pic" %></li>
                   <li><%= link_to "SignOut", destroy_user_session_path,method: :delete %></li>
                 <% else %>
                   <li><%= link_to "SignIn", new_user_session_path %></li>
